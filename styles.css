@@ -503,6 +503,137 @@ figcaption {
 
 #lb-fermer:hover { color: var(--blanc); }
 
+.nav-liens-groupe {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+.nav-lien-actif {
+  color: var(--blanc) !important;
+}
+
+.mtm-hero-intro {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 520px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+  margin-top: -10px;
+}
+
+.mtm-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 70vh;
+  background-color: var(--gris);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mtm-intro-texte {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mtm-intro-texte h2 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.mtm-intro-texte p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+.mtm-intro-chiffres {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+
+.grand-chiffre {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.grand-val {
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--blanc);
+}
+
+.grand-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.mtm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.bloc-inverse .mtm-tags {
+  justify-content: flex-end;
+}
+
+.tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+}
+
+.bandeau-mtm {
+  min-height: 60vh;
+  background-color: var(--noir);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  padding: 80px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.bandeau-mtm h2 {
+  font-size: clamp(32px, 4.5vw, 58px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.bandeau-sous {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 440px;
+  line-height: 1.7;
+}
+
 @media (max-width: 768px) {
   #nav        { padding: 0 24px; }
   .hero-corps { padding: 0 24px 52px; }
@@ -534,4 +665,49 @@ figcaption {
 @media (max-width: 480px) {
   .galerie-grille { grid-template-columns: 1fr; }
   .hero-corps h1  { font-size: 34px; }
+}
+
+@media (max-width: 768px) {
+  .nav-liens-groupe {
+    gap: 20px;
+  }
+
+  .mtm-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .mtm-intro-texte {
+    padding: 50px 24px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .mtm-intro-chiffres {
+    padding: 50px 24px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .bloc-inverse .mtm-tags {
+    justify-content: flex-start;
+  }
+
+  .bandeau-mtm {
+    padding: 60px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-liens-groupe {
+    gap: 14px;
+  }
+
+  .nav-lien {
+    font-size: 9px;
+  }
+
+  .mtm-intro-chiffres {
+    flex-direction: column;
+  }
 }
