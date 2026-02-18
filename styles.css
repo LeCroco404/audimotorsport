@@ -660,15 +660,8 @@ figcaption {
   #footer { flex-direction: column; gap: 8px; padding: 24px; }
 
   .specs { gap: 20px; flex-wrap: wrap; }
-}
 
-@media (max-width: 480px) {
-  .galerie-grille { grid-template-columns: 1fr; }
-  .hero-corps h1  { font-size: 34px; }
-}
-
-@media (max-width: 768px) {
-  .nav-liens-groupe {
+    .nav-liens-groupe {
     gap: 20px;
   }
 
@@ -699,7 +692,10 @@ figcaption {
 }
 
 @media (max-width: 480px) {
-  .nav-liens-groupe {
+  .galerie-grille { grid-template-columns: 1fr; }
+  .hero-corps h1  { font-size: 34px; }
+
+    .nav-liens-groupe {
     gap: 14px;
   }
 
