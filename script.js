@@ -46,40 +46,6 @@ function gererParallaxe() {
   }, { passive: true });
 }
 
-const video = document.getElementById("audiVideo");
-const playPause = document.getElementById("playPause");
-const muteBtn = document.getElementById("muteBtn");
-const progressContainer = document.querySelector(".progress-container");
-const progressBar = document.getElementById("progressBar");
-
-playPause.addEventListener("click", () => {
-  if (video.paused) {
-    video.play();
-    playPause.textContent = "⏸";
-  } else {
-    video.pause();
-    playPause.textContent = "▶";
-  }
-});
-
-muteBtn.addEventListener("click", () => {
-  video.muted = !video.muted;
-  muteBtn.textContent = video.muted ? "🔇" : "🔊";
-});
-
-video.addEventListener("timeupdate", () => {
-  const percent = (video.currentTime / video.duration) * 100;
-  progressBar.style.width = percent + "%";
-});
-
-progressContainer.addEventListener("click", (e) => {
-  const rect = progressContainer.getBoundingClientRect();
-  const clickX = e.clientX - rect.left;
-  const width = rect.width;
-  const percent = clickX / width;
-  video.currentTime = percent * video.duration;
-});
-
 function gererLightbox() {
   var lightbox = document.getElementById('lightbox');
   if (!lightbox) return;
@@ -114,9 +80,45 @@ function gererLightbox() {
   });
 }
 
+function gererVideo() {
+  const video = document.getElementById("audiVideo");
+  if (!video) return; // si la page n'a pas de vidéo, on ignore
+
+  const playPause = document.getElementById("playPause");
+  const muteBtn = document.getElementById("muteBtn");
+  const progressContainer = document.querySelector(".progress-container");
+  const progressBar = document.getElementById("progressBar");
+
+  playPause.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+      playPause.textContent = "⏸";
+    } else {
+      video.pause();
+      playPause.textContent = "▶";
+    }
+  });
+  muteBtn.addEventListener("click", () => {
+    video.muted = !video.muted;
+    muteBtn.textContent = video.muted ? "🔇" : "🔊";
+  });
+  video.addEventListener("timeupdate", () => {
+    const percent = (video.currentTime / video.duration) * 100;
+    progressBar.style.width = percent + "%";
+  });
+  progressContainer.addEventListener("click", (e) => {
+    const rect = progressContainer.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const width = rect.width;
+    const percent = clickX / width;
+    video.currentTime = percent * video.duration;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   gererNav();
   gererApparition();
   gererParallaxe();
   gererLightbox();
+  gererVideo();
 });
