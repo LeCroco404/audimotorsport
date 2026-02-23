@@ -1,0 +1,10 @@
+.DS_Store
+assets/.DS_Store
+Thumbs.db
+node_modules/
+*.log
+.cache/
+dist/
+build/
+.vscode/
+._*
